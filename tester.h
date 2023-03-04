@@ -22,7 +22,7 @@ typedef struct s_result_list
 t_result_list *test_list_new();
 void test_list_add_back(t_result_list *last, t_result_list *node);
 void test_list_free(t_result_list *list_head);
-
+int randint(int max);
 int randintmin(int min, int max);
 // void test_isfunc(t_test_result *result, int (*lib_isfunc)(int), int (*ft_isfunc)(int), int arg);
 t_result_list *test_isalpha();

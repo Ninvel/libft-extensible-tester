@@ -11,6 +11,8 @@
 
 int randint(int max)
 {
+	if (max > 127)
+		(void)max;
 	if (max < 1)
 		return -1;
 	if (max >= RAND_MAX)
@@ -70,16 +72,16 @@ void test_list_free(t_result_list *list_head)
 	}
 }
 
-int main(void)
-{
-	srand((unsigned int)time(NULL));
+// int main(void)
+// {
+// 	srand((unsigned int)time(NULL));
 
-	t_result_list *results = test_isalpha();
+// 	t_result_list *results = test_isalpha();
 
-	for (t_result_list *node = results; node != NULL; node = node->next)
-		printf("%s with arg %d | LIBC: %d | FT: %d\n", node->result.eq_test != 0 ? "PASSED" : "FAILED", node->result.serializedarg, node->result.serialized_libc_test, node->result.serialized_ft_res);
-	test_list_free(results);
+// 	for (t_result_list *node = results; node != NULL; node = node->next)
+// 		printf("%s with arg %d | LIBC: %d | FT: %d\n", node->result.eq_test != 0 ? "PASSED" : "FAILED", node->result.serializedarg, node->result.serialized_libc_test, node->result.serialized_ft_res);
+// 	test_list_free(results);
 
-	/* code */
-	return 0;
-}
+// 	/* code */
+// 	return 0;
+// }
